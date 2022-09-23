@@ -5,4 +5,5 @@
     <string name="loginTitle">Login</string>
     <string name="loginName">Login Name</string>
     <string name="passwordTitle">Password</string>
+    <string name="switchName">Flip</string>
 </resources>
