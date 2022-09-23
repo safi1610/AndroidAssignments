@@ -32,7 +32,7 @@
         android:minHeight="48dp"
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
-        android:text="Switch" />
+        android:text="@string/switchName" />
 
     <ImageButton
         android:id="@+id/imageButton2"
