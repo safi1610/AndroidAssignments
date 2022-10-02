@@ -7,4 +7,5 @@
     <string name="loginName">Identifiant</string>
     <string name="passwordTitle">Mot de passe</string>
     <string name="switchName">Retourner</string>
+    <string name="loginButton">Connexion</string>
 </resources>
