@@ -35,6 +35,17 @@ public class MainActivity extends Activity {
 
         });
 
+        Button startChat = findViewById(R.id.chatButton);
+
+        startChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked start chat");
+                Intent enterChar = new Intent(MainActivity.this, ChatWindow.class);
+                startActivity(enterChar);
+            }
+        });
+
     }
 
     @Override
