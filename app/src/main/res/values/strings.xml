@@ -13,8 +13,16 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="weatherForecast">Weather Forecast</string>
+    <string name="minTemp">Min Temp:</string>
+    <string name="maxTemp">Max Temp:</string>
+    <string name="currTemp">Current Temp:</string>
+
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="aboutToast">Mohammad Safi</string>
+    <string name="title_activity_weather_forcast">WeatherForcast</string>
+
 </resources>
