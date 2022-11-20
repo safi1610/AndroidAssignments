@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/msgRetr"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="33dp"
@@ -14,26 +14,26 @@
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="30dp"
         android:text="@string/messageSec"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/msgId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/msgId"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="33dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="559dp"
         android:text="@string/messageID"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/msgRetr" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/deleteButt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,5 +41,5 @@
         android:text="@string/deleteMessage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/msgId" />
 </androidx.constraintlayout.widget.ConstraintLayout>

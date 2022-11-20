@@ -1,10 +1,12 @@
 package com.example.androidassignments;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,6 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +35,11 @@ public class ChatWindow extends AppCompatActivity {
 
     ChatDatabaseHelper messageDB;
     SQLiteDatabase database;
+
+    TextView msgTxt = findViewById(R.id.msgRetr);
+    TextView msgId = findViewById(R.id.msgId);
+
+    boolean chatFrameExists = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +50,10 @@ public class ChatWindow extends AppCompatActivity {
         Button sendButton = findViewById(R.id.sendButton);
         messageDB = new ChatDatabaseHelper(this);
         database = messageDB.getWritableDatabase();
+
+        if(findViewById(R.id.chatFrame) != null){
+            chatFrameExists = true;
+        }
 
 
         ChatAdapter messageAdapter = new ChatAdapter(this);
@@ -80,10 +93,27 @@ public class ChatWindow extends AppCompatActivity {
                 msgBox.setText("");
 
             }
+
         });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                msgTxt.setText(messageAdapter.getItem(i));
+                long id = messageAdapter.getItemId(i);
+                int intID = (int) id;
+
+                msgId.setText(intID);
+
+            }
+        });
+
+
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     protected void onDestroy() {
@@ -105,6 +135,10 @@ public class ChatWindow extends AppCompatActivity {
             return(msgs.get(position));
         }
 
+        public long getItemId(int position){
+            return getItemId(position);
+        }
+
         public View getView(int position, View convertView, ViewGroup parent){
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
 
@@ -123,6 +157,8 @@ public class ChatWindow extends AppCompatActivity {
             return result;
 
         }
+
+
 
 
     }
